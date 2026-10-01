@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f4f9;
+  color: #1a1a2e;
+}
+.topo-admin {
+  background: #ffffff;
+  border-bottom: 2px solid #dedee8;
+  padding: 18px max(20px, calc((100% - 1050px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.topo-admin h1 { margin: 0; color: #6c5ce7; }
+.topo-admin p { margin: 4px 0 0; color: #666; }
+.topo-admin a {
+  background: #6c5ce7;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.container-admin {
+  max-width: 1050px;
+  margin: 32px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.painel-formulario, .painel-lista {
+  background: #fff;
+  border: 1px solid #dedee8;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+h2 { margin-top: 0; }
+label { display: block; margin: 14px 0 6px; font-weight: 700; }
+input {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid #cfcfda;
+  border-radius: 7px;
+  font: inherit;
+}
+button { font: inherit; cursor: pointer; }
+.acoes-formulario { margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+#btn-salvar, .secundario, .btn-editar, .btn-excluir {
+  border: 0;
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-weight: 700;
+}
+#btn-salvar { background: #6c5ce7; color: #fff; }
+.secundario { background: #e7e7ef; color: #333; }
+.mensagem-status { min-height: 22px; margin: 14px 0 0; font-weight: 600; }
+.sucesso { color: #18794e; }
+.erro { color: #b42318; }
+.tabela-responsiva { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #e4e4ec; }
+th { background: #f8f8fb; }
+.acoes-tabela { display: flex; gap: 7px; }
+.btn-editar { background: #6c5ce7; color: #fff; }
+.btn-excluir { background: #d63031; color: #fff; }
+button:disabled { opacity: .6; cursor: not-allowed; }
+@media (max-width: 760px) {
+  .topo-admin { align-items: flex-start; }
+  .container-admin { grid-template-columns: 1fr; }
+  .acoes-tabela { flex-direction: column; }
+}
+
+.admin-bloqueado { visibility: hidden; }
+.acoes-topo { display: flex; align-items: center; gap: 8px; }
+#btn-sair {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  background: #d63031;
+  color: #fff;
+}
+.preview-imagem {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-top: 10px;
+  border: 1px solid #dedee8;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.miniatura-produto {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border: 1px solid #e4e4ec;
+  border-radius: 6px;
+  background: #fff;
+}
+.pagina-login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.login-card {
+  width: min(100%, 390px);
+  background: #fff;
+  border: 1px solid #dedee8;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+.login-card h1 { margin: 0; color: #6c5ce7; }
+.login-card h2 { margin: 8px 0 22px; font-size: 1.15rem; color: #555; }
+#btn-login {
+  width: 100%;
+  margin-top: 18px;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px;
+  font-weight: 700;
+  background: #6c5ce7;
+  color: #fff;
+}
+.voltar-loja { display: inline-block; margin-top: 10px; color: #6c5ce7; text-decoration: none; }

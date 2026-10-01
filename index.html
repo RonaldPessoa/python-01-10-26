@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GeekZone — loja de produtos geek e gamer.">
+  <title>GeekZone | Loja Oficial</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mochila.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script type="module" src="js/products.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">⚡ GeekZone</div>
+    <div class="controles-topo">
+      <div class="carrinho-box" aria-live="polite">🛒 Itens: <span id="contador-itens">0</span> | Total: <span id="valor-total">R$ 0,00</span></div>
+      <button id="btn-checkout" type="button">Fechar Pedido</button>
+      <button class="btn-tema" id="btn-dark-mode" type="button">🌙 Modo Noturno</button>
+    </div>
+  </header>
+  <main>
+    <h1 class="titulo-secao">Destaques da Madrugada</h1>
+    <section class="vitrine" id="vitrine-produtos" aria-label="Vitrine de produtos"><p class="estado-vitrine">Carregando produtos...</p></section>
+  </main>
+  <dialog id="checkout-dialog" class="checkout-dialog">
+    <form method="dialog">
+      <h2>Resumo do pedido</h2><div id="resumo-pedido"></div>
+      <p class="checkout-total">Total: <strong id="checkout-total">R$ 0,00</strong></p>
+      <div class="acoes-dialog"><button value="cancel">Continuar comprando</button><button id="limpar-carrinho" type="button" class="btn-secundario">Limpar carrinho</button></div>
+    </form>
+  </dialog>
+
+  <button id="btn-chat" class="btn-chat" type="button" aria-label="Abrir atendimento" aria-controls="chat-robo" aria-expanded="false">💬</button>
+  <section id="chat-robo" class="chat-robo" aria-label="Chat de atendimento" hidden>
+    <header class="chat-cabecalho">
+      <div><strong>🤖 GeekBot</strong><small>Atendimento GeekZone</small></div>
+      <button id="fechar-chat" class="fechar-chat" type="button" aria-label="Fechar chat">×</button>
+    </header>
+    <div id="chat-mensagens" class="chat-mensagens" aria-live="polite">
+      <p class="mensagem bot">Olá! Sou o GeekBot. Posso ajudar com produtos, preços, estoque, entrega ou seu pedido.</p>
+    </div>
+    <form id="chat-form" class="chat-form">
+      <label class="sr-only" for="chat-input">Digite sua mensagem</label>
+      <input id="chat-input" type="text" maxlength="180" autocomplete="off" placeholder="Digite sua dúvida..." required>
+      <button type="submit" aria-label="Enviar mensagem">➤</button>
+    </form>
+  </section>
+
+  <footer class="rodape"><small>GeekZone — vitrine demonstrativa.</small></footer>
+</body>
+</html>

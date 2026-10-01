@@ -1,0 +1,116 @@
+CONTEXTO
+
+Estou desenvolvendo, para um curso do SENAI, um site de vendas chamado GeekZone para a empresa fictícia PINDA Sistemas. O site já possui carrinho de compras e um robô de atendimento feito em HTML, CSS e JavaScript.
+
+Atualmente, o robô responde perguntas por palavras-chave, mas não consegue acessar as informações do carrinho do cliente.
+
+Precisamos melhorar o projeto sem recriar o site do zero e sem quebrar as funcionalidades existentes.
+
+O objetivo é permitir que o robô consulte o valor atual do carrinho e, com base nesse valor, informe condições de frete e ofereça desconto quando aplicável.
+
+COMANDO
+
+Analise os arquivos existentes do projeto e implemente uma nova funcionalidade para que o robô consiga consultar o valor total atual do carrinho em tempo real.
+
+Crie um novo arquivo JavaScript separado, que funcionará como uma "Mochila de Ferramentas" do robô.
+
+Esse arquivo deve conter funções responsáveis por:
+
+1. Receber ou consultar o valor total atual do carrinho.
+2. Calcular a condição de frete.
+3. Calcular a possibilidade de desconto.
+4. Gerar uma resposta adequada para o robô com base nessas informações.
+
+Depois, altere somente o necessário no arquivo principal para que ele possa chamar essas funções externas.
+
+CONDIÇÕES
+
+- Não recriar o site do zero.
+- Preservar HTML, CSS, carrinho e chat já existentes.
+- Não colocar as regras de cálculo diretamente no arquivo JavaScript principal.
+- Criar um novo arquivo JavaScript específico para essas regras.
+- O arquivo principal deve apenas chamar as funções existentes na "Mochila".
+- Utilizar JavaScript puro, sem bibliotecas ou APIs externas.
+- Manter o código simples, organizado e fácil de explicar em sala de aula.
+- Não duplicar regras de negócio em vários arquivos.
+- Garantir que o valor utilizado seja o valor atual do carrinho no momento da pergunta.
+
+Aplicar obrigatoriamente estas regras:
+
+REGRA DE FRETE
+
+- Se o valor do carrinho for menor que R$ 200,00, o frete deve ser R$ 25,00.
+- Se o valor do carrinho for igual ou superior a R$ 200,00, informar "Frete Grátis!".
+
+REGRA DE DESCONTO
+
+- Se o valor do carrinho for maior que R$ 300,00, oferecer 10% de desconto.
+- Calcular corretamente o valor do desconto.
+- Informar também o valor final do carrinho após o desconto.
+- Se o carrinho tiver R$ 300,00 exatamente, não aplicar o desconto, pois a regra exige valor maior que R$ 300,00.
+
+INTEGRAÇÃO COM O CHAT
+
+O robô deve reconhecer perguntas relacionadas a temas como:
+
+- frete;
+- frete grátis;
+- desconto;
+- promoção;
+- valor do carrinho;
+- total da compra;
+- quanto estou comprando;
+- tenho direito a desconto;
+- tenho direito a frete grátis.
+
+Exemplo:
+
+Se o cliente possuir R$ 500,00 no carrinho e perguntar:
+
+"Tenho direito a frete grátis e algum desconto pelo que estou levando?"
+
+O robô deverá identificar:
+
+- Valor do carrinho: R$ 500,00.
+- Frete: grátis.
+- Desconto: 10%, equivalente a R$ 50,00.
+- Valor final com desconto: R$ 450,00.
+
+A resposta pode ser semelhante a:
+
+"Seu carrinho está em R$ 500,00. Você ganhou Frete Grátis! E tenho uma oferta para você: 10% de desconto, economizando R$ 50,00. Com o desconto, sua compra fica por R$ 450,00."
+
+ESTRUTURA
+
+Sempre que possível, organize a solução de forma semelhante a:
+
+- Arquivo principal do site/chat → controla interface e interação com o usuário.
+- Novo arquivo de ferramentas → contém análise do carrinho, cálculo de frete e cálculo de desconto.
+
+O novo arquivo pode utilizar funções com responsabilidades separadas, por exemplo:
+
+- obter ou receber valor do carrinho;
+- calcularFrete();
+- calcularDesconto();
+- analisarCarrinho();
+
+Os nomes podem ser ajustados se houver uma solução tecnicamente melhor.
+
+CRITÉRIOS
+
+A implementação será considerada correta se:
+
+1. O site continuar funcionando normalmente.
+2. O carrinho continuar adicionando e removendo produtos corretamente.
+3. O robô conseguir consultar o valor atualizado do carrinho.
+4. Carrinhos abaixo de R$ 200 cobrarem R$ 25 de frete.
+5. Carrinhos de R$ 200 ou mais receberem frete grátis.
+6. Carrinhos acima de R$ 300 receberem oferta de 10% de desconto.
+7. O cálculo do desconto e do valor final estiver correto.
+8. As regras matemáticas estiverem no novo arquivo JavaScript, e não no arquivo principal.
+9. O arquivo principal apenas chamar as ferramentas necessárias.
+10. Não forem utilizadas APIs ou bibliotecas externas.
+11. O código permanecer simples, comentado apenas quando necessário e fácil de apresentar ao professor.
+12. A solução tratar corretamente os valores de fronteira de R$ 200,00 e R$ 300,00.
+
+Ao final, entregue os arquivos completos que precisarem ser criados ou alterados e explique brevemente onde cada arquivo deve ser colocado no projeto e como o arquivo principal chama a "Mochila de Ferramentas".
